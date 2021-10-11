@@ -53,8 +53,28 @@ variable "ssh-location" {
   type          = string
 }
 
+
 variable "database-snapshot-identifier" {
-  default       = ""
-  description   = "IP Address that SSH into EC2"
+  default       = "arn:aws:rds:us-east-1:130159455024:snapshot:postgresql-useast1-meraki-poc-snapshot"
+  description   = "Database Snapshot Name"
   type          = string
 }
+
+variable "database-instance-class" {
+  default       = "db.t3.micro"
+  description   = "Database Intance Type"
+  type          = string
+}
+
+variable "database-instance-identifier" {
+  default       = "postgresql"
+  description   = "Database Intance Identifier"
+  type          = string
+}
+
+variable "multi-az-deployment" {
+  default       = false
+  description   = "Create a Standby DB Instance"
+  type          = bool
+}
+
